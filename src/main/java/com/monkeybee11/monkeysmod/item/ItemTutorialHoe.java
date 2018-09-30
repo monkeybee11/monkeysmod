@@ -11,6 +11,6 @@ public class ItemTutorialHoe extends ItemHoe {
 
 		setUnlocalizedName(monkeysmod.MODID + "." + unlocalizedName);
 		setRegistryName(registryName);
-	    setCreativeTab(monkeysmod.TUTORIAL_TAB);
+		setCreativeTab(monkeysmod.TUTORIAL_TAB);
 	}
 }

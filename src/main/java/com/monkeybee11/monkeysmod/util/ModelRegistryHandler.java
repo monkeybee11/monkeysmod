@@ -18,6 +18,15 @@ public class ModelRegistryHandler {
 	public static void registerModels(ModelRegistryEvent event) {
 		registerModel(TutorialItems.BASIC_ITEM);
 		registerModel(Item.getItemFromBlock(TutorialBlocks.BASIC_BLOCK));
+		registerModel(TutorialItems.TUTORIAL_AXE);
+		registerModel(TutorialItems.TUTORIAL_PICKAXE);
+		registerModel(TutorialItems.TUTORIAL_HOE);
+		registerModel(TutorialItems.TUTORIAL_SHOVEL);
+		registerModel(TutorialItems.TUTORIAL_SWORD);
+		registerModel(TutorialItems.TUTORIAL_HELMET);
+		registerModel(TutorialItems.TUTORIAL_CHESTPLATE);
+		registerModel(TutorialItems.TUTORIAL_LEGGINGS);
+		registerModel(TutorialItems.TUTORIAL_BOOTS);
 	}
 	
 	public static void registerModel(Item item) {

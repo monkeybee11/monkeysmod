@@ -4,7 +4,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.monkeybee11.monkeysmod.proxy.IProxy;
 import com.monkeybee11.monkeysmod.proxy.ServerProxy;
+import com.monkeybee11.monkeysmod.recipes.TutorialRecipes;
 import com.monkeybee11.monkeysmod.tabs.TutorialTab;
+import com.monkeybee11.monkeysmod.world.gen.TutorialWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +15,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @Mod(modid = monkeysmod.MODID, name = monkeysmod.NAME, version = monkeysmod.VERSION, acceptedMinecraftVersions = monkeysmod.MC_VERSION)
 public class monkeysmod {
@@ -40,6 +43,9 @@ public class monkeysmod {
     @EventHandler
     public void init(FMLInitializationEvent event) {
 	    logger.info("monkeysmod.NAME" + "say hi!");
+	    TutorialRecipes.initSmelting();
+	    GameRegistry.registerWorldGenerator(new TutorialWorldGen(), 0);
+
     }
 
     @EventHandler
