@@ -1,5 +1,6 @@
 package com.monkeybee11.monkeysmod.util;
 
+import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.init.TutorialItems;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -16,6 +17,7 @@ public class ModelRegistryHandler {
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event) {
 		registerModel(TutorialItems.BASIC_ITEM);
+		registerModel(Item.getItemFromBlock(TutorialBlocks.BASIC_BLOCK));
 	}
 	
 	public static void registerModel(Item item) {
