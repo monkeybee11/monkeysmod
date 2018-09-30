@@ -23,7 +23,7 @@ public class TutorialWorldGen implements IWorldGenerator {
 			break;
 			
 		case OVERWORLD:
-			genStandard(genStan_overworld, world, random, chunkX, chunkZ, 10, 0, 200);
+			genStandard(genTutorial_overworld, world, random, chunkX, chunkZ, 10, 0, 200);
 			break;
 			
 		case THE_END:
