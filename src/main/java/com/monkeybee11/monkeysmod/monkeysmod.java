@@ -4,7 +4,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.monkeybee11.monkeysmod.proxy.IProxy;
 import com.monkeybee11.monkeysmod.proxy.ServerProxy;
+import com.monkeybee11.monkeysmod.tabs.TutorialTab;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -23,6 +25,7 @@ public class monkeysmod {
 	
 	public static final String CLIENT = "com.monkeybee11.monkeysmod.proxy.ClientProxy";
 	public static final String SERVER = "com.monkeybee11.monkeysmod.proxy.ServerProxy";
+	public static final CreativeTabs TUTORIAL_TAB = new TutorialTab("tabTutorialMod");
 	
 	@SidedProxy(clientSide = monkeysmod.CLIENT, serverSide = monkeysmod.SERVER)
 	public static IProxy proxy;

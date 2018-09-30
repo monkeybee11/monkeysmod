@@ -1,2 +1,8 @@
 item.monkeysmod.itemBasic.name=banana
 tile.monkeysmod.blockBasic.name=temp block
+itemGroup.monkeysmod.tabTutorialMod=monkeys mod
+item.monkeysmod.itemTutorialAxe.name=banana axe
+item.monkeysmod.itemTutorialHoe.name=banana hoe
+item.monkeysmod.itemTutorialPickaxe.name=banana pick
+item.monkeysmod.itemTutorialShovle.name=banana digger
+item.monkeysmod.itemTutorialSword.name=banana pointy stick

@@ -17,7 +17,7 @@ public class BlockBasic extends Block {
         super(material);
         setUnlocalizedName(monkeysmod.MODID + "." + unlocalizedName);
         setRegistryName(registryName);
-        setCreativeTab(CreativeTabs.MISC);
+        setCreativeTab(monkeysmod.TUTORIAL_TAB);
         setSoundType(sound);
     }
  
