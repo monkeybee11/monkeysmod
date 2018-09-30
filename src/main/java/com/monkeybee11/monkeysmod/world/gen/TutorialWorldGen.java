@@ -2,19 +2,26 @@ package com.monkeybee11.monkeysmod.world.gen;
 
 import java.util.Random;
 
+import com.monkeybee11.monkeysmod.init.TutorialBlocks;
+
+import net.minecraft.block.state.pattern.BlockMatcher;
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class TutorialWorldGen implements IWorldGenerator {
 
+	private final WorldGenMinable genTutorial_overworld;
+	
 	public TutorialWorldGen() {
-
+		genTutorial_overworld = new WorldGenMinable(TutorialBlocks.BASIC_BLOCK.getDefaultState(), 15, BlockMatcher.forBlock(Blocks.STONE));
 	}
-
+	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.getDimensionType()) {
