@@ -1,11 +1,10 @@
 package com.monkeybee11.monkeysmod.fluid;
 
 import com.monkeybee11.monkeysmod.monkeysmod;
-import com.monkeybee11.monkeysmod.materials.TutorialMaterials;
-
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialLiquid;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -102,7 +101,7 @@ public class RainbowWater extends Fluid
     
     {
     	
-    public final static Material RAINBOWWATER = new MaterialLiquid( MapColor.BLUE_STAINED_HARDENED_CLAY);
+    public final static Material RAINBOWWATER = new MaterialLiquid( MapColor.WATER);
     }
  
     @Override
@@ -115,7 +114,15 @@ public class RainbowWater extends Fluid
     
 
     
-    public static final RainbowWater RAINBOWWATER = (RainbowWater) new RainbowWater(
+    @SuppressWarnings("unused")
+	private void setCreativeTab(CreativeTabs tutorialTab) {
+		setCreativeTab(monkeysmod.TUTORIAL_TAB);
+		
+	}
+
+
+
+	public static final RainbowWater RAINBOWWATER = (RainbowWater) new RainbowWater(
     		   "rainbowwater", 
     		   new ResourceLocation(monkeysmod.MODID,"rainbowwater_still"), 
     		   new ResourceLocation(monkeysmod.MODID, "rainbowwater_still")
@@ -128,6 +135,11 @@ public class RainbowWater extends Fluid
     		   .setTemperature(300);
 
 static{FluidRegistry.enableUniversalBucket();FluidRegistry.addBucketForFluid(RAINBOWWATER);}
+
+public String getRegistryName() {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 
 }

@@ -12,6 +12,5 @@ public class TutorialMaterials {
 	public static final ToolMaterial TUTORIAL_TOOL = EnumHelper.addToolMaterial(monkeysmod.MODID + ":" + "tutorial_tool", 2, 400, 6, 5, 9);
  //keeping this for refrance if more tools need it                            (name, textureName, durability, reductionAmounts, enchantability, soundOnEquip, toughness);
 	public static final ArmorMaterial TUTORIAL_ARMOR = EnumHelper.addArmorMaterial(monkeysmod.MODID + ":" + "tutorial_armor", monkeysmod.MODID + ":tutorial", 16, new int[]{2, 5, 6, 3}, 5, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0);
-
 	
 }

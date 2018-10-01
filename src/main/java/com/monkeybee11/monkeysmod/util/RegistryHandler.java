@@ -1,6 +1,8 @@
 package com.monkeybee11.monkeysmod.util;
 
 import com.monkeybee11.monkeysmod.block.BlockBasic;
+import com.monkeybee11.monkeysmod.fluid.RainbowWater;
+import com.monkeybee11.monkeysmod.init.MONKEYSFLUID;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.item.ItemBasic;
 import com.monkeybee11.monkeysmod.item.ItemTutorialArmor;
@@ -19,6 +21,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.registries.IForgeRegistryEntry.Impl;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -48,7 +51,8 @@ public class RegistryHandler {
 		};
 		
 		final Item[] itemBlocks = {
-				new ItemBlock(TutorialBlocks.BASIC_BLOCK).setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName())
+				new ItemBlock(TutorialBlocks.BASIC_BLOCK).setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName()),
+                new ItemBlock(MONKEYSFLUID.RAINBOWWATER).setRegistryName(RainbowWater.RAINBOWWATER.getRegistryName())
 		};
 		
 		event.getRegistry().registerAll(item);
