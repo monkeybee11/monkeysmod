@@ -9,6 +9,7 @@ import com.monkeybee11.monkeysmod.tabs.TutorialTab;
 import com.monkeybee11.monkeysmod.world.gen.TutorialWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -29,6 +30,7 @@ public class monkeysmod {
 	public static final String CLIENT = "com.monkeybee11.monkeysmod.proxy.ClientProxy";
 	public static final String SERVER = "com.monkeybee11.monkeysmod.proxy.ServerProxy";
 	public static final CreativeTabs TUTORIAL_TAB = new TutorialTab("tabTutorialMod");
+    public static final  RAINBOWWATER = new BlockFluidClassic(ModFluids.RAINBOWWATER, ModMaterials.TutorialMaterials);
 	
 	@SidedProxy(clientSide = monkeysmod.CLIENT, serverSide = monkeysmod.SERVER)
 	public static IProxy proxy;
@@ -38,6 +40,7 @@ public class monkeysmod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 	    logger = event.getModLog();
+	    
     }
 
     @EventHandler
@@ -52,5 +55,4 @@ public class monkeysmod {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
-
 }
