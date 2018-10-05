@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "age=0,facing=south": { "model": "cocoa_age0_s" },
+        "age=1,facing=south": { "model": "cocoa_age1_s" },
+        "age=2,facing=south": { "model": "cocoa_age2_s" }
+    }
+}

@@ -1,10 +1,8 @@
 package com.monkeybee11.monkeysmod.util;
 
-import com.monkeybee11.monkeysmod.init.MONKEYSFLUID;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.init.TutorialItems;
 
-import net.minecraftforge.fluids.Fluid;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -29,7 +27,7 @@ public class ModelRegistryHandler {
 		registerModel(TutorialItems.TUTORIAL_CHESTPLATE);
 		registerModel(TutorialItems.TUTORIAL_LEGGINGS);
 		registerModel(TutorialItems.TUTORIAL_BOOTS);
-		registerModel(Item.getItemFromBlock(MONKEYSFLUID.RAINBOWWATER));
+		registerModel(Item.getItemFromBlock(TutorialBlocks.BANANABUNCH));
 	}
 	
 	public static void registerModel(Item item) {

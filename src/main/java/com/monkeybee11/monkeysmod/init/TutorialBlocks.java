@@ -9,5 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 public class TutorialBlocks {
 	
 	public static final Block BASIC_BLOCK = null;
+	public static final Block RAINBOWWATER = null;
+	public static final Block BANANABUNCH = null;
 
 }
