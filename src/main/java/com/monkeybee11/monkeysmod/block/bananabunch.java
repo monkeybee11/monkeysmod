@@ -9,10 +9,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockFaceShape;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
@@ -28,16 +29,13 @@ public class bananabunch extends Block implements IGrowable{
 
 	public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 2);
 
-	public bananabunch() {
-		super(null);
-		this.setTickRandomly(true);
-	}
 	
     public bananabunch(Material material, SoundType sound, String unlocalizedName, String registryName) {
-    	super(null);
+        super(material);
         setUnlocalizedName(monkeysmod.MODID + "." + unlocalizedName);
         setRegistryName(registryName);
         setCreativeTab(monkeysmod.TUTORIAL_TAB);
+		this.setTickRandomly(true);
     };
 
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
@@ -127,6 +125,13 @@ public class bananabunch extends Block implements IGrowable{
     	i = i | ((Integer)state.getValue(AGE)).intValue() << 2;
     	return i;
     }
+
+	@Override
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] {AGE});
+    }
+
     
     public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, IBlockState state, BlockPos pos, EnumFacing face)
     {
