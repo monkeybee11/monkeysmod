@@ -1,7 +1,8 @@
 package com.monkeybee11.monkeysmod.util;
 
 import com.monkeybee11.monkeysmod.block.BlockBasic;
-import com.monkeybee11.monkeysmod.block.bananabunch;
+import com.monkeybee11.monkeysmod.block.BlockBananaBunch;
+import com.monkeybee11.monkeysmod.block.BlockChocolateblock;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.item.ItemBasic;
 import com.monkeybee11.monkeysmod.item.ItemTutorialArmor;
@@ -17,7 +18,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -28,7 +28,8 @@ public class RegistryHandler {
 	@SubscribeEvent
 	public static void registerBlocks(Register<Block> event) {
 		final Block[] blocks = { new BlockBasic(Material.ROCK, "blockBasic", "basic_block"),
-				                 new bananabunch(Material.PLANTS, null, "bananabunch", "bunch_banana")};
+				new BlockBananaBunch(Material.PLANTS, "bananabunch", "banana_bunch"),
+				new BlockChocolateblock(Material.SPONGE, "chocolateblock", "chocolate_block") };
 
 		event.getRegistry().registerAll(blocks);
 	}
@@ -48,10 +49,13 @@ public class RegistryHandler {
 				new ItemTutorialArmor(TutorialMaterials.TUTORIAL_ARMOR, EntityEquipmentSlot.LEGS, "leggingsTutorial",
 						"tutorial_leggings"),
 				new ItemTutorialArmor(TutorialMaterials.TUTORIAL_ARMOR, EntityEquipmentSlot.FEET, "bootsTutorial",
-						"tutorial_boots"), };
+						"tutorial_boots") };
 
-		final Item[] itemBlocks = { new ItemBlock(TutorialBlocks.BASIC_BLOCK)
-				.setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName()) };
+		final Item[] itemBlocks = {
+				new ItemBlock(TutorialBlocks.BASIC_BLOCK).setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName()),
+				new ItemBlock(TutorialBlocks.BANANABUNCH).setRegistryName(TutorialBlocks.BANANABUNCH.getRegistryName()),
+				new ItemBlock(TutorialBlocks.CHOCOLATEBLOCK)
+						.setRegistryName(TutorialBlocks.CHOCOLATEBLOCK.getRegistryName()) };
 
 		event.getRegistry().registerAll(item);
 		event.getRegistry().registerAll(itemBlocks);

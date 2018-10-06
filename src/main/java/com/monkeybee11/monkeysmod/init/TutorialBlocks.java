@@ -11,5 +11,6 @@ public class TutorialBlocks {
 	public static final Block BASIC_BLOCK = null;
 	public static final Block RAINBOWWATER = null;
 	public static final Block BANANABUNCH = null;
+	public static final Block CHOCOLATEBLOCK = null;
 
 }
