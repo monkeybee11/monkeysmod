@@ -18,5 +18,6 @@ public class TutorialItems {
 	public static final Item TUTORIAL_CHESTPLATE = null;
 	public static final Item TUTORIAL_LEGGINGS = null;
 	public static final Item TUTORIAL_BOOTS = null;
+	public static final Item BANANA_PICKER = null;
 
 }

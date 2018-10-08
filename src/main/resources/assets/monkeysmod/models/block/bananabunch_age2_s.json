@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "block:bananabunch_age0",
-		"particle": "block:bananabunch_age0"
+		"0": "monkeysmod:blocks/bananabunch_age0",
+		"particle": "monkeysmod:blocks/bananabunch_age0"
 	},
 	"elements": [
 		{

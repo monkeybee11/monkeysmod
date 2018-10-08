@@ -27,7 +27,9 @@ public class ModelRegistryHandler {
 		registerModel(TutorialItems.TUTORIAL_CHESTPLATE);
 		registerModel(TutorialItems.TUTORIAL_LEGGINGS);
 		registerModel(TutorialItems.TUTORIAL_BOOTS);
-		registerModel(Item.getItemFromBlock(TutorialBlocks.BANANABUNCH));
+		registerModel(Item.getItemFromBlock(TutorialBlocks.BANANA_BUNCH));
+		registerModel(Item.getItemFromBlock(TutorialBlocks.CHOCOLATE_BLOCK));
+		registerModel(TutorialItems.BANANA_PICKER);
 	}
 	
 	public static void registerModel(Item item) {

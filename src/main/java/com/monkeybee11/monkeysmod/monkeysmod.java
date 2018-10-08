@@ -52,5 +52,4 @@ public class monkeysmod {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
-	
 }
