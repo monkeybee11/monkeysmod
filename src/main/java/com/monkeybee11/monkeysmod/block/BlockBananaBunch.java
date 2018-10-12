@@ -5,24 +5,28 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.monkeybee11.monkeysmod.monkeysmod;
+import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.init.TutorialItems;
 
+import ibxm.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -73,30 +77,45 @@ public class BlockBananaBunch extends Block implements IGrowable, IGrowing {
 			this.dropBlock(worldIn, pos, state);
 		}
 	}
+	
+	public boolean onBlockActivated(NonNullList<ItemStack> drops, IBlockAccess world, EntityPlayer playerIn, BlockPos pos, IBlockState state,int fortune) {
+		ItemStack itm = playerIn.getHeldItemMainhand();
+		if(!itm.equals(TutorialItems.BANANA_PICKER) == true)
+			return true;
+			drops.add(new ItemStack(TutorialItems.BASIC_ITEM, 6));
+			
+			if(!itm.equals(TutorialItems.BANANA_PICKER) == false); {
+				playerIn.sendMessage(new TextComponentString("cant reach that from here if only there was a banana picker"));
+			return false;
+			}
+		
+	}
+	
 
 	private boolean isPlantedright(World worldIn, BlockPos pos) {
 		return worldIn.getBlockState(pos.up()).getMaterial().isSolid();
 	}
+	
+	private void dropBlock(World worldIn, BlockPos pos, IBlockState state)
 
-	private void dropBlock(World worldIn, BlockPos pos, IBlockState state) {
-		if (!(state.getValue(AGE) != 3)) {
+    {
+        worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
 
-		}
-		worldIn.setBlockState(pos, Blocks.AIR.getDefaultState(), 3);
-		this.dropBlockAsItem(worldIn, pos, state, 0);
-	}
+        this.dropBlockAsItem(worldIn, pos, state, 0);
 
-	@Override
-	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
-			int fortune) {
-		if (getMetaFromState(state) >= 2) {
-			if (!fruitRemoval) {
-				drops.add(new ItemStack(Items.AIR, 1));
-			}
-			drops.add(new ItemStack(TutorialItems.BASIC_ITEM, 6));
-		}
-	}
+    }
 
+	//@Override
+//	public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state,
+//			int fortune) {
+	//	if (getMetaFromState(state) >= 2) {
+	//		if (!fruitRemoval) {
+	//			drops.add(new ItemStack(TutorialBlocks.BANANA_BUNCH , 1));
+	//		}
+	//		drops.add(new ItemStack(TutorialItems.BASIC_ITEM, 6));
+	//	}
+	//}
+//
 	@Override
 	public boolean canPlaceBlockAt(World world, BlockPos pos) {
 		final Block leafBlock = world.getBlockState(pos.up()).getBlock();
