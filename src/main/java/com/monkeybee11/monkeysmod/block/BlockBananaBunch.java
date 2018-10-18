@@ -16,11 +16,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -90,32 +90,29 @@ public class BlockBananaBunch extends Block implements IGrowable, IGrowing {
 
 	}
 
+
 	@Override
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 		ItemStack itemStack = playerIn.getHeldItemMainhand();
 		if (itemStack.getItem() == TutorialItems.BANANA_PICKER) {
 			if (getMetaFromState(state) >= 2)
-			canHarvestBlock(worldIn, pos, playerIn);
-			getDrops(TutorialItems.BASIC_ITEM,0 , worldIn, pos, state, getFullyGrown());
-			harvestBlock(worldIn, playerIn, pos, getDefaultState(), null, itemStack);
+				canHarvestBlock(worldIn, pos, playerIn);
+			harvestBlock(worldIn, playerIn, pos, state, null, itemStack);
+			onBlockHarvested(worldIn, pos, getDefaultState(), playerIn);
+			NonNullList<ItemStack> drops = NonNullList.create();
+			getDrops(drops, worldIn, pos, state, getFullyGrown());
+			drops.add(new ItemStack(TutorialItems.BASIC_ITEM,6));
 			return true;
 		} else {
 			if (itemStack.getItem() != Items.DYE)
-				if(worldIn.isRemote){
-					   playerIn.sendMessage(new TextComponentString("cant reach that from here if only there was a banana picker"));
-					}
+				if (worldIn.isRemote) {
+					playerIn.sendMessage(
+							new TextComponentString("cant reach that from here if only there was a banana picker"));
+				}
 			return false;
 		}
 	}
-
-	private void getDrops(Item drops, int i, World worldIn, BlockPos pos, IBlockState defaultState,
-			int fullyGrown) {
-		
-		drops.canHarvestBlock( defaultState, new ItemStack(TutorialItems.BASIC_ITEM,6));
-		
-	}
-
 
 	@Override
 	public boolean canPlaceBlockAt(World world, BlockPos pos) {

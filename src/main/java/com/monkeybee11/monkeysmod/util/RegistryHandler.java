@@ -5,7 +5,7 @@ import com.monkeybee11.monkeysmod.block.BlockBananaBunch;
 import com.monkeybee11.monkeysmod.block.BlockChocolateblock;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.item.ItemBananaPicker;
-import com.monkeybee11.monkeysmod.item.ItemBasic;
+import com.monkeybee11.monkeysmod.item.BasicItem;
 import com.monkeybee11.monkeysmod.item.ItemTutorialArmor;
 import com.monkeybee11.monkeysmod.item.ItemTutorialAxe;
 import com.monkeybee11.monkeysmod.item.ItemTutorialHoe;
@@ -34,10 +34,9 @@ public class RegistryHandler {
 
 		event.getRegistry().registerAll(blocks);
 	}
-
 	@SubscribeEvent
 	public static void registerItems(Register<Item> event) {
-		final Item[] item = { new ItemBasic("itemBasic", "basic_item"),
+		final Item[] item = { new BasicItem("itemBasic", "Basic_item"),
 				new ItemTutorialAxe(TutorialMaterials.TUTORIAL_TOOL, "axeTutorial", "tutorial_axe"),
 				new ItemTutorialPickaxe(TutorialMaterials.TUTORIAL_TOOL, "pickaxeTutorial", "tutorial_pickaxe"),
 				new ItemTutorialHoe(TutorialMaterials.TUTORIAL_TOOL, "hoeTutorial", "tutorial_hoe"),

@@ -1,4 +1,4 @@
-item.monkeysmod.itemBasic.name=banana
+item.monkeysmod.basicItem.name=banana
 tile.monkeysmod.blockBasic.name=temp block
 itemGroup.monkeysmod.tabTutorialMod=monkeys mod
 item.monkeysmod.axeTutorial.name=banana axe

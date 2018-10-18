@@ -12,5 +12,7 @@ public class ItemTutorialPickaxe extends ItemPickaxe {
 		setUnlocalizedName(monkeysmod.MODID + "." + unlocalizedName);
 		setRegistryName(registryName);
 	    setCreativeTab(monkeysmod.TUTORIAL_TAB);
+	    
 	}
+	
 }
