@@ -5,6 +5,8 @@ import com.monkeybee11.monkeysmod.block.BlockBananaBunch;
 import com.monkeybee11.monkeysmod.block.BlockChocolateblock;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.item.ItemBananaPicker;
+import com.monkeybee11.monkeysmod.item.Banana;
+import com.monkeybee11.monkeysmod.item.BananaPeel;
 import com.monkeybee11.monkeysmod.item.BasicItem;
 import com.monkeybee11.monkeysmod.item.ItemTutorialArmor;
 import com.monkeybee11.monkeysmod.item.ItemTutorialAxe;
@@ -50,7 +52,9 @@ public class RegistryHandler {
 						"tutorial_leggings"),
 				new ItemTutorialArmor(TutorialMaterials.TUTORIAL_ARMOR, EntityEquipmentSlot.FEET, "bootsTutorial",
 						"tutorial_boots"),
-				new ItemBananaPicker("bananapicker", "banana_picker")};
+				new ItemBananaPicker("bananapicker", "banana_picker"),
+				new Banana("banana", "banana", 5, 0.f, false),
+				new BananaPeel("PeelBanana","Banana_peel")};
 
 		final Item[] itemBlocks = {
 				new ItemBlock(TutorialBlocks.BASIC_BLOCK).setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName()),

@@ -30,6 +30,8 @@ public class ModelRegistryHandler {
 		registerModel(Item.getItemFromBlock(TutorialBlocks.BANANA_BUNCH));
 		registerModel(Item.getItemFromBlock(TutorialBlocks.CHOCOLATE_BLOCK));
 		registerModel(TutorialItems.BANANA_PICKER);
+		registerModel(TutorialItems.BANANA);
+		registerModel(TutorialItems.BANANA_PEEL);
 	}
 	
 	public static void registerModel(Item item) {

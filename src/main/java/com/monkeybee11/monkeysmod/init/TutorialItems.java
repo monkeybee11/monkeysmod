@@ -1,6 +1,8 @@
 package com.monkeybee11.monkeysmod.init;
 
 import com.monkeybee11.monkeysmod.monkeysmod;
+import com.monkeybee11.monkeysmod.item.Banana;
+import com.monkeybee11.monkeysmod.item.BananaPeel;
 import com.monkeybee11.monkeysmod.item.BasicItem;
 
 import net.minecraft.item.Item;
@@ -20,4 +22,6 @@ public class TutorialItems {
 	public static final Item TUTORIAL_LEGGINGS = null;
 	public static final Item TUTORIAL_BOOTS = null;
 	public static final Item BANANA_PICKER = null;
+	public static final Item BANANA = new Banana("unlocalizedName","registryName", 5, 0.3f, false);
+	public static final Item BANANA_PEEL = new BananaPeel("unlocalizedName","registryName");
 }
