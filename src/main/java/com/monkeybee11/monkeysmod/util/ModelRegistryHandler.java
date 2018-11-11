@@ -32,6 +32,7 @@ public class ModelRegistryHandler {
 		registerModel(TutorialItems.BANANA_PICKER);
 		registerModel(TutorialItems.BANANA);
 		registerModel(TutorialItems.BANANA_PEEL);
+		registerModel(TutorialItems.ITEM_BRUSH);
 	}
 	
 	public static void registerModel(Item item) {

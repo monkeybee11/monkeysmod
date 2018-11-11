@@ -5,6 +5,7 @@ import com.monkeybee11.monkeysmod.block.BlockBananaBunch;
 import com.monkeybee11.monkeysmod.block.BlockChocolateblock;
 import com.monkeybee11.monkeysmod.init.TutorialBlocks;
 import com.monkeybee11.monkeysmod.item.ItemBananaPicker;
+import com.monkeybee11.monkeysmod.item.ItemBrush;
 import com.monkeybee11.monkeysmod.item.Banana;
 import com.monkeybee11.monkeysmod.item.BananaPeel;
 import com.monkeybee11.monkeysmod.item.BasicItem;
@@ -38,7 +39,7 @@ public class RegistryHandler {
 	}
 	@SubscribeEvent
 	public static void registerItems(Register<Item> event) {
-		final Item[] item = { new BasicItem("itemBasic", "Basic_item"),
+		final Item[] item = { new BasicItem("basicItem", "Basic_item"),
 				new ItemTutorialAxe(TutorialMaterials.TUTORIAL_TOOL, "axeTutorial", "tutorial_axe"),
 				new ItemTutorialPickaxe(TutorialMaterials.TUTORIAL_TOOL, "pickaxeTutorial", "tutorial_pickaxe"),
 				new ItemTutorialHoe(TutorialMaterials.TUTORIAL_TOOL, "hoeTutorial", "tutorial_hoe"),
@@ -54,7 +55,8 @@ public class RegistryHandler {
 						"tutorial_boots"),
 				new ItemBananaPicker("bananapicker", "banana_picker"),
 				new Banana("banana", "banana", 5, 0.f, false),
-				new BananaPeel("PeelBanana","Banana_peel")};
+				new BananaPeel("bananapeel","Banana_peel"),
+				new ItemBrush("Brushitem","Item_Brush")};
 
 		final Item[] itemBlocks = {
 				new ItemBlock(TutorialBlocks.BASIC_BLOCK).setRegistryName(TutorialBlocks.BASIC_BLOCK.getRegistryName()),

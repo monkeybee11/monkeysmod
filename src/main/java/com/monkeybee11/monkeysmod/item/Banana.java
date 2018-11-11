@@ -21,6 +21,5 @@ public class Banana extends ItemFood  {
     {
 		
            playerIn.inventory.addItemStackToInventory(new ItemStack(TutorialItems.BANANA_PEEL, 1));
-			
     }
 }

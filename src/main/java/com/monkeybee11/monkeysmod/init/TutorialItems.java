@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 @ObjectHolder(monkeysmod.MODID)
 public class TutorialItems {
 	
-	public static final Item BASIC_ITEM  = new BasicItem("unlocalizedName","registryName");
+	public static final Item BASIC_ITEM  = new BasicItem("basicItem","Basic_item");
 	public static final Item TUTORIAL_AXE = null;
 	public static final Item TUTORIAL_PICKAXE = null;
 	public static final Item TUTORIAL_HOE = null;
@@ -22,6 +22,7 @@ public class TutorialItems {
 	public static final Item TUTORIAL_LEGGINGS = null;
 	public static final Item TUTORIAL_BOOTS = null;
 	public static final Item BANANA_PICKER = null;
-	public static final Item BANANA = new Banana("unlocalizedName","registryName", 5, 0.3f, false);
-	public static final Item BANANA_PEEL = new BananaPeel("unlocalizedName","registryName");
+	public static final Item BANANA = new Banana("banana","banana", 5, 0.3f, false);
+	public static final Item BANANA_PEEL = new BananaPeel("bananapeel","Banana_peel");
+	public static final Item ITEM_BRUSH = null;
 }
